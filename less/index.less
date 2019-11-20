@@ -128,14 +128,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-// Variables
+// Variables----****--------------------------------
+//FONTS****
+
 @font: "Oswald", "sans-serif";
 @font-p: "Hind", "sans-serif";
+
+//COLORS*****----------------------------------------
 @bgbutton: lavender;
 @bgcard: rgb(155, 155, 155);
+@primary: #8d9e94;
+@alternate: #e4e4e4;
+
+//ADDTNL STYLING****---------------------------------
 @basicborder: 1px solid rgb(151, 151, 151);
 
-// MIXINS------------------------------
+// MIXINS--------------------------------------------
 .card-spacing {
   h2,
   h3,
@@ -148,6 +156,11 @@ table {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+//MEDIA QUERIES SHORTHAND----------------
+
+@desktop: ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet: ~"only screen and (min-width: 720px) and (max-width: 959px)";
+@mobile: ~"(maxwidth: 500px)";
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -176,8 +189,11 @@ h3 {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-
-  //--header-container
+  // 500px-------------
+  @media @mobile {
+    max-width: 500px;
+  }
+  //--header-container--------------------------------------------------------
 
   .header-container {
     background-color: #8d9e94;
@@ -185,9 +201,14 @@ h3 {
     max-width: 100%;
     height: 300px;
     display: flex;
-    border-bottom: 1px solid black;
     justify-content: space-evenly;
     align-items: flex-start;
+    // 500px------------------------
+    @media @mobile {
+      height: 100%;
+      display: flex;
+      flex-flow: column wrap;
+    }
 
     .header-wrapper {
       width: 49%;
@@ -218,9 +239,10 @@ h3 {
     }
   }
 
-  //----INTRO SECTION------------------
+  //----INTRO SECTION---------------------------------------------------------------
   .work-card.intro {
     width: 100%;
+    background-color: @alternate;
 
     .heading-style();
     .card-spacing();
@@ -240,6 +262,11 @@ h3 {
     margin-top: 5px;
     display: flex;
     justify-content: space-evenly;
+    @media @mobile {
+      max-width: 100%;
+      display: flex;
+      flex-flow: column wrap-reverse;
+    }
 
     .work-card.work {
       background-color: @bgcard;
@@ -247,6 +274,9 @@ h3 {
       margin-top: 100% - 98%;
 
       .card-spacing();
+      @media @mobile {
+        width: 100%;
+      }
 
       h2 {
         background-color: @bgbutton;
@@ -269,6 +299,10 @@ h3 {
       margin-top: 100% - 98%;
       .card-spacing();
 
+      @media @mobile {
+        width: 100%;
+      }
+
       h1 {
         text-align: right;
       }
@@ -290,5 +324,60 @@ h3 {
         text-align: right;
       }
     }
+  }
+  // CONTACT FORM --------standard css-------
+  /* Style inputs */
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    background-color: @primary;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: @primary;
+  }
+
+  /* Style the container/contact section */
+  .contact {
+    border-radius: 5px;
+    background-color: @alternate;
+    padding: 50px;
+
+    h2,
+    p {
+      padding: 5px;
+    }
+
+    img {
+      opacity: 80%;
+    }
+  }
+
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 }

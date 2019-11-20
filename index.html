@@ -3,8 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>My Resume</title>
+    <title>Rob Houck - Resume Page</title>
 
     <link rel="stylesheet" href="css/index.css" />
     <!-- Google Fonts -->
@@ -122,6 +123,51 @@
               exercitation ullamco laboris nisi ut aliquip ex ea commodo
               consequat. Duis aute irure dolor in reprehender
             </p>
+          </div>
+        </div>
+      </section>
+      <section class="contact">
+        <div style="text-align:center">
+          <h2>Contact Me</h2>
+          <p>
+            Fill out this form with your information and I'll get back to you!
+          </p>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="/images/rob-charlie.jpg" style="width:100%" />
+          </div>
+          <div class="column">
+            <form action="/action_page.php">
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Your name.."
+              />
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lastname"
+                placeholder="Your last name.."
+              />
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+              <label for="subject">Subject</label>
+              <textarea
+                id="subject"
+                name="subject"
+                placeholder="Write something.."
+                style="height:170px"
+              ></textarea>
+              <input type="submit" value="Submit" />
+            </form>
           </div>
         </div>
       </section>
