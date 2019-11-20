@@ -190,194 +190,182 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   // 500px-------------
-  @media @mobile {
-    max-width: 500px;
-  }
-  //--header-container--------------------------------------------------------
+}
+//--header-container--------------------------------------------------------
 
-  .header-container {
-    background-color: #8d9e94;
+.header-container {
+  background-color: #8d9e94;
 
-    max-width: 100%;
-    height: 300px;
+  max-width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  // 500px------------------------
+
+  .header-wrapper {
+    width: 49%;
+    height: 80%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    // 500px------------------------
-    @media @mobile {
-      height: 100%;
-      display: flex;
-      flex-flow: column wrap;
-    }
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-left: 100px;
+  }
 
-    .header-wrapper {
-      width: 49%;
-      height: 80%;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: flex-end;
-      justify-content: flex-start;
-      margin-left: 100px;
-    }
+  .nav-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    margin-right: 50px;
 
-    .nav-wrapper {
-      width: 100%;
-      display: flex;
-      flex-flow: row-reverse nowrap;
-      margin-right: 50px;
-
-      a {
-        color: black;
-        background-color: @bgbutton;
-        padding: 0 50px;
-        border-top-left-radius: 5px;
-      }
-    }
-
-    h1 {
-      font-size: 5rem;
+    a {
+      color: black;
+      background-color: @bgbutton;
+      padding: 0 50px;
+      border-top-left-radius: 5px;
     }
   }
 
-  //----INTRO SECTION---------------------------------------------------------------
-  .work-card.intro {
-    width: 100%;
-    background-color: @alternate;
+  h1 {
+    font-size: 5rem;
+  }
+}
 
-    .heading-style();
+//----INTRO SECTION---------------------------------------------------------------
+.work-card.intro {
+  width: 100%;
+  background-color: @alternate;
+
+  .heading-style();
+  .card-spacing();
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}
+
+//------------------------------------------------------------------------------------
+// CONTENT BODY ---------------------------------------------------
+
+.content-body {
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+
+  p {
+    line-height: 1.25;
+  }
+
+  .work-card.work {
+    background-color: @bgcard;
+    width: 39%;
+    margin-top: 100% - 98%;
+
     .card-spacing();
 
     h2 {
-      font-size: 3rem;
+      background-color: @bgbutton;
+      width: 50%;
+      text-align: center;
+      border-top-right-radius: 5px;
+    }
+
+    h3 {
+      margin-top: 15px;
+      background-color: @bgbutton;
+      width: 100%;
+      .heading-style();
     }
   }
 
-  //------------------------------------------------------------------------------------
-  // CONTENT BODY ---------------------------------------------------
+  .work-card.skills {
+    width: 39%;
+    background-color: @bgcard;
+    margin-top: 100% - 98%;
+    .card-spacing();
 
-  .content-body {
-    background-color: lightgrey;
-    height: 100%;
-    width: 100%;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    @media @mobile {
-      max-width: 100%;
+    h1 {
+      text-align: right;
+    }
+
+    h2 {
+      background-color: @bgbutton;
+      width: 50%;
+      text-align: center;
       display: flex;
-      flex-flow: column wrap-reverse;
+      justify-content: center;
+      border-top-right-radius: 5px;
     }
 
-    .work-card.work {
-      background-color: @bgcard;
-      width: 39%;
-      margin-top: 100% - 98%;
-
-      .card-spacing();
-      @media @mobile {
-        width: 100%;
-      }
-
-      h2 {
-        background-color: @bgbutton;
-        width: 50%;
-        text-align: center;
-        border-top-right-radius: 5px;
-      }
-
-      h3 {
-        margin-top: 15px;
-        background-color: @bgbutton;
-        width: 100%;
-        .heading-style();
-      }
-    }
-
-    .work-card.skills {
-      width: 39%;
-      background-color: @bgcard;
-      margin-top: 100% - 98%;
-      .card-spacing();
-
-      @media @mobile {
-        width: 100%;
-      }
-
-      h1 {
-        text-align: right;
-      }
-
-      h2 {
-        background-color: @bgbutton;
-        width: 50%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        border-top-right-radius: 5px;
-      }
-
-      h3 {
-        margin-top: 15px;
-        background-color: @bgbutton;
-        width: 100%;
-        .heading-style();
-        text-align: right;
-      }
+    h3 {
+      margin-top: 15px;
+      background-color: @bgbutton;
+      width: 100%;
+      .heading-style();
+      text-align: right;
     }
   }
-  // CONTACT FORM --------standard css-------
-  /* Style inputs */
-  input[type="text"],
-  select,
-  textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+}
+// CONTACT FORM --------standard css-------
+/* Style inputs */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: @primary;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: @primary;
+}
+
+/* Style the container/contact section */
+.contact {
+  border-radius: 5px;
+  background-color: @alternate;
+  padding: 50px;
+
+  h2,
+  p {
+    padding: 5px;
   }
 
-  input[type="submit"] {
-    background-color: @primary;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
+  img {
+    opacity: 80%;
   }
+}
 
-  input[type="submit"]:hover {
-    background-color: @primary;
-  }
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
 
-  /* Style the container/contact section */
-  .contact {
-    border-radius: 5px;
-    background-color: @alternate;
-    padding: 50px;
-
-    h2,
-    p {
-      padding: 5px;
-    }
-
-    img {
-      opacity: 80%;
-    }
-  }
-
-  /* Create two columns that float next to eachother */
-  .column {
-    float: left;
-    width: 50%;
-    margin-top: 6px;
-    padding: 20px;
-  }
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
