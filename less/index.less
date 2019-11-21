@@ -205,13 +205,17 @@ h3 {
   // 500px------------------------
 
   .header-wrapper {
-    width: 100%;
+    width: 500px;
     height: 100%;
     display: flex;
     justify-content: space-around;
+    flex-flow: row wrap;
     align-items: baseline;
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
     @media @mobile {
-      flex-flow: row wrap;
+      max-width: 80%;
     }
     p {
       font-size: 1.5rem;
@@ -222,20 +226,22 @@ h3 {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-  }
-
-  a {
-    color: #666666;
-    background-color: @bgbutton;
-    padding: 0 50px;
-    border-top-left-radius: 5px;
-
     @media @mobile {
-      padding: 0 10px;
+      width: 100%;
+    }
+
+    a {
+      color: #666666;
+      background-color: @bgbutton;
+      padding: 0 50px;
+      border-top-left-radius: 5px;
+
+      @media @mobile {
+        padding: 0 15px;
+      }
     }
   }
 }
-
 h1 {
   font-size: 5rem;
 }
@@ -277,7 +283,7 @@ h1 {
   }
 
   .work-card.work {
-    background-color: @bgcard;
+    background-color: @primary;
     width: 39%;
     margin-top: 100% - 98%;
     .card-spacing();
@@ -302,7 +308,7 @@ h1 {
 
   .work-card.skills {
     width: 39%;
-    background-color: @bgcard;
+    background-color: @primary;
     margin-top: 100% - 98%;
     .card-spacing();
     @media @mobile {
@@ -334,6 +340,7 @@ h1 {
 // CONTACT FORM --------standard css-------
 
 /* Style inputs */
+
 input[type="text"],
 select,
 textarea {
@@ -391,4 +398,54 @@ input[type="submit"]:hover {
 
 label {
   font-family: @font;
+}
+
+/* GALLERY PORTFOLIO */
+
+html,
+body {
+  height: 100%;
+  margin: 20px;
+}
+p {
+  font-family: @font-p;
+}
+
+h1,
+.nav-wrapper a,
+h2,
+h3 {
+  font-family: @font;
+  text-decoration: none;
+}
+
+.gallery-container {
+  max-width: 1024px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: @alternate;
+
+  .images {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .gallery-card {
+    height: 300px;
+    width: 30%;
+
+    border: 1px solid black;
+    margin-top: 20px;
+  }
+}
+
+.footer-container {
+  max-width: 1024px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: @primary;
 }
