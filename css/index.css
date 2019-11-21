@@ -168,12 +168,6 @@ h3 {
   flex-flow: column nowrap;
   justify-content: center;
 }
-@media screen and (max-width: 500px) {
-  .header-container {
-    height: 500px;
-    flex-flow: column-reverse nowrap;
-  }
-}
 .header-container .header-wrapper {
   width: 100%;
   height: 100%;
@@ -194,13 +188,18 @@ h3 {
   display: flex;
   justify-content: space-evenly;
 }
-.header-container .nav-wrapper a {
-  color: black;
+.header-container a {
+  color: #666666;
   background-color: lavender;
   padding: 0 50px;
   border-top-left-radius: 5px;
 }
-.header-container h1 {
+@media screen and (max-width: 500px) {
+  .header-container a {
+    padding: 0 10px;
+  }
+}
+h1 {
   font-size: 5rem;
 }
 .work-card.intro {
@@ -217,6 +216,12 @@ h3 {
 .work-card.intro h2 {
   font-size: 3rem;
 }
+@media screen and (max-width: 500px) {
+  .work-card.intro h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
 .work-card.intro p {
   line-height: 1.5;
 }
@@ -226,6 +231,7 @@ h3 {
   width: 100%;
   margin-top: 5px;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
 }
 .content-body p {
@@ -240,6 +246,11 @@ h3 {
 .content-body .work-card.work h3,
 .content-body .work-card.work p {
   padding: 10px;
+}
+@media screen and (max-width: 500px) {
+  .content-body .work-card.work {
+    width: 100%;
+  }
 }
 .content-body .work-card.work h2 {
   background-color: lavender;
@@ -263,6 +274,11 @@ h3 {
 .content-body .work-card.skills h3,
 .content-body .work-card.skills p {
   padding: 10px;
+}
+@media screen and (max-width: 500px) {
+  .content-body .work-card.skills {
+    width: 100%;
+  }
 }
 .content-body .work-card.skills h1 {
   text-align: right;
