@@ -165,31 +165,42 @@ h3 {
   max-width: 100%;
   height: 300px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
-.header-wrapper {
-  width: 49%;
-  height: 80%;
+@media screen and (max-width: 500px) {
+  .header-container {
+    height: 500px;
+    flex-flow: column-reverse nowrap;
+  }
+}
+.header-container .header-wrapper {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-flow: row wrap;
-  align-items: flex-end;
-  justify-content: flex-start;
-  margin-left: 100px;
+  justify-content: space-around;
+  align-items: baseline;
 }
-.nav-wrapper {
+@media screen and (max-width: 500px) {
+  .header-container .header-wrapper {
+    flex-flow: row wrap;
+  }
+}
+.header-container .header-wrapper p {
+  font-size: 1.5rem;
+}
+.header-container .nav-wrapper {
   width: 100%;
   display: flex;
-  flex-flow: row-reverse nowrap;
-  margin-right: 50px;
+  justify-content: space-evenly;
 }
-.nav-wrapper a {
+.header-container .nav-wrapper a {
   color: black;
   background-color: lavender;
   padding: 0 50px;
   border-top-left-radius: 5px;
 }
-h1 {
+.header-container h1 {
   font-size: 5rem;
 }
 .work-card.intro {
